@@ -6,8 +6,44 @@
     - size: small
       widgets:
         - type: to-do
-        - type: calendar
-          first-day-of-week: monday
+          #- type: calendar
+          #first-day-of-week: monday
+
+        - type: custom-api
+          title: 今日黄历
+          hide-header: false
+          cache: 12h
+          url: "https://api.52vmy.cn/api/wl/wnl/huangli"
+          template: |
+            <div style="font-family: sans-serif; line-height: 1.5; padding: 10px;">
+              <!-- 日期 -->
+              <h2 style="text-align: center; margin-bottom: 5px; color: #d35400;">{{ .JSON.String "data.date" }}</h2>
+              <p style="text-align: center; margin-bottom: 15px; color: #7f8c8d;"><strong>农历：</strong>{{ .JSON.String "data.lunar" }}</p>
+        
+              <!-- 宜 -->
+              <div>
+                <h4 style="margin-bottom: 5px; color: #27ae60;">宜：</h4>
+                <span style="background-color: #27ae60; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.85em;">
+                  {{ range .JSON.Array "data.info" }}
+                    {{ if eq (.String "name") "吉神宜趋" }}
+                      {{ .String "index" }}
+                    {{ end }}
+                  {{ end }}
+                </span>
+              </div>
+        
+              <!-- 忌 -->
+              <div style="margin-top: 10px;">
+                <h4 style="margin-bottom: 5px; color: #c0392b;">忌：</h4>
+                <span style="background-color: #c0392b; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.85em;">
+                  {{ range .JSON.Array "data.info" }}
+                    {{ if eq (.String "name") "凶神宜忌" }}
+                      {{ .String "index" }}
+                    {{ end }}
+                  {{ end }}
+                </span>
+              </div>
+            </div>
 
         - type: custom-api
           title: LeetCode Daily Question
@@ -139,7 +175,7 @@
     - size: full
       widgets:
         - type: search
-          autofocus: true
+          #autofocus: true
           search-engine: google
 
         - type: bookmarks
@@ -252,16 +288,17 @@
           markets:
             #- symbol: SPY
             #  name: S&P 500
-            #- symbol: BTC-USD
-            #  name: Bitcoin
+            - symbol: BTC-USD
+              name: Bitcoin
+              chart-link: https://www.tradingview.com/chart/?symbol=INDEX:BTCUSD
             - symbol: ETH-USD
               name: Eth 
             - symbol: DOGE-USD
               name: Doge 
+            - symbol: NDX
+              name: NSDK
             - symbol: NVDA
               name: NVIDIA
-            - symbol: AAPL
-              name: Apple
 
           #- type: releases
           #cache: 1d
