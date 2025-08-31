@@ -1,0 +1,26 @@
+server:
+  assets-path: /app/assets
+  port: 8080
+
+#theme:
+  # Note: assets are cached by the browser, changes to the CSS file
+  # will not be reflected until the browser cache is cleared (Ctrl+F5)
+  #custom-css-file: /assets/user.css
+
+theme:
+  background-color: 225 14 15
+  primary-color: 157 47 65
+  contrast-multiplier: 1.1
+
+auth:
+  secret-key: nMOycnaaWen4w5RUSq0DeXhCGCNR2HWT5y4qCiw+3BDJWsntj6z2/ExcXhGwlX442E32tC7tzzpaDZcah3F/XQ==
+  users:
+    yaoge:
+      password: yaoge@202412. 
+
+pages:
+  # It's not necessary to create a new file for each page and include it, you can simply
+  # put its contents here, though multiple pages are easier to manage when separated
+  - $include: startpage.yml
+  - $include: subscription.yml
+
