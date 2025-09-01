@@ -6,12 +6,13 @@
     - size: small
       widgets:
         - type: to-do
+          hide-header: true
           #- type: calendar
           #first-day-of-week: monday
 
         - type: custom-api
           title: 今日黄历
-          hide-header: false
+          hide-header: true
           cache: 12h
           url: "https://api.52vmy.cn/api/wl/wnl/huangli"
           template: |
@@ -46,6 +47,7 @@
             </div>
 
         - type: custom-api
+          hide-header: true
           title: LeetCode Daily Question
           cache: 12h
           url: https://leetcode.com/graphql
@@ -175,10 +177,12 @@
     - size: full
       widgets:
         - type: search
+          hide-header: true
           #autofocus: true
           search-engine: google
 
         - type: bookmarks
+          hide-header: true
           groups:
             - title: Virtaitech
               hide-arrow: true
@@ -277,6 +281,7 @@
     - size: small
       widgets:
         - type: weather
+          hide-header: true
           location: Shanghai, China 
           units: metric # alternatively "imperial"
           hour-format: 24h # alternatively "24h"
@@ -284,6 +289,7 @@
           hide-location: true
 
         - type: markets
+          hide-header: true
           cache: 5s 
           markets:
             #- symbol: SPY
@@ -311,8 +317,10 @@
           #  - immich-app/immich
           #  - syncthing/syncthing
         - type: server-stats
+          hide-header: true
           servers:
             - type: local
               name: Services
 
         - type: docker-containers
+          hide-header: true
