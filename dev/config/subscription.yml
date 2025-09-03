@@ -28,11 +28,13 @@
 
 
         - type: videos
+          cache: 1h
           channels:
             - UCrCWHtK87Qe7oYjbaYQd9bQ
             - UC9v3JGut2Z1PxrXEpGzgEAA
 
         - type: split-column
+          cache: 1h
           max-columns: 3
           widgets:
             - type: reddit

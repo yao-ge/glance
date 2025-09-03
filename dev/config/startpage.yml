@@ -13,7 +13,7 @@
         - type: custom-api
           title: 今日黄历
           hide-header: true
-          cache: 12h
+          cache: 6h
           url: "https://apis.tianapi.com/lunar/index?key=30a0c74a985cca336770b95b4f829263"
           template: |
             <div style="font-family: sans-serif; line-height: 1.3; padding: 8px;">
@@ -36,7 +36,7 @@
         - type: custom-api
           hide-header: true
           title: LeetCode Daily Question
-          cache: 12h
+          cache: 6h
           url: https://leetcode.com/graphql
           method: POST
           headers:
@@ -174,10 +174,10 @@
             - title: Virtaitech
               hide-arrow: true
               links:
-                - title: zentao
+                - title: Zentao
                   url: http://zentao.virtaitech.com/my/
                   icon: mdi:bug
-                - title: confluence
+                - title: Confluence
                   url: http://confluence.virtaitech.com/
                   icon: si:confluence
                 - title: Office 365
@@ -186,13 +186,13 @@
                 - title: Outlook
                   url: https://partner.outlook.cn/mail/
                   icon: mdi:microsoft-outlook
-                - title: 一心向上
+                - title: My heart will go on
                   url: https://esop.uponeshare.com/staff/home
                   icon: si:figshare
             - title: Tools
               hide-arrow: true
               links:
-                - title: 网站导航
+                - title: Navigator
                   url: http://121.199.11.62:8080/
                   icon: mdi:account
                 - title: Chatgpt
@@ -201,10 +201,10 @@
                 - title: Github
                   url: https://github.com/yao-ge
                   icon: si:github
-                - title: 量化
+                - title: Quantitative Analysis
                   url: http://121.199.11.62:5700/query
                   icon: si:qwant
-                - title: 阿里云盘
+                - title: Aliyun Drive
                   url: http://121.199.11.62:8002/login
                   icon: si:googlecloudstorage
                 - title: Notion
@@ -216,7 +216,7 @@
                 - title: Westdata
                   url: https://wd-gold.com/clientarea.php
                   icon: si:envoyproxy
-                - title: blog
+                - title: Blog
                   url: https://yao-ge.github.io/
                   icon: si:blogger
                 - title: Base64
@@ -234,7 +234,7 @@
                 - title: Zhihu
                   url: https://www.zhihu.com/signin?next=%2F
                   icon: si:zhihu
-                - title: 小林coding
+                - title: Coding
                   url: https://xiaolincoding.com/
                   icon: si:coder
                 - title: Leetcode
